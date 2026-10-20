@@ -1,11 +1,25 @@
 // npm run dev: Web 画面の TypeScript をウォッチビルドしながら API サーバーを起動する（追加パッケージ不要）。
 import { spawn } from 'node:child_process';
+import { readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
 const tscBin = require.resolve('typescript/bin/tsc');
 const tsxCli = fileURLToPath(import.meta.resolve('tsx/cli'));
+
+// npm run stop が dev のプロセス一式を止められるように PID を残す
+const pidFile = fileURLToPath(new URL('../.dev.pid', import.meta.url));
+writeFileSync(pidFile, String(process.pid));
+process.on('exit', () => {
+  try {
+    if (readFileSync(pidFile, 'utf8').trim() === String(process.pid)) {
+      rmSync(pidFile);
+    }
+  } catch {
+    // すでに消えている
+  }
+});
 
 const children = [
   spawn(process.execPath, [tscBin, '-p', 'tsconfig.web.json', '--watch', '--preserveWatchOutput'], {

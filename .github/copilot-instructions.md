@@ -29,6 +29,7 @@ GitHub Copilot ハンズオン用の小さなカフェ注文アプリです。No
 | 目的 | コマンド |
 | --- | --- |
 | 開発サーバー（API + 画面、http://localhost:3000） | `npm run dev` |
+| 開発サーバーの停止 | `npm run stop` |
 | テスト | `npm test` |
 | テスト + カバレッジ（80% 未満で失敗） | `npm run test:coverage` |
 | Lint | `npm run lint` |
