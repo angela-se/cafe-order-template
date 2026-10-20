@@ -42,6 +42,7 @@ API は [requests.http](requests.http)（REST Client）から試せます。
 | --- | --- |
 | `npm run dev` | API サーバーと画面のビルドをウォッチモードで起動（http://localhost:3000） |
 | `npm run build` / `npm start` | ビルドして `dist/` から起動 |
+| `npm run stop` | `npm run dev` / `npm start` で起動したサーバーを停止 |
 | `npm test` | テスト（Vitest） |
 | `npm run test:coverage` | テスト + カバレッジ（行・分岐・関数・文すべて 80% 以上が必要） |
 | `npm run lint` | ESLint |

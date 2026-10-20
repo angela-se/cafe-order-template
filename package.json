@@ -12,6 +12,7 @@
     "dev": "node scripts/dev.mjs",
     "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.web.json",
     "start": "node dist/server.js",
+    "stop": "node scripts/stop.mjs",
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.build.json --noEmit && tsc -p tsconfig.web.json --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
