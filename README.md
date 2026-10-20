@@ -91,7 +91,7 @@ scripts/         precheck、開発用スクリプト、ハンドオーバー作�
 
 ## 発展課題（スタック PR）
 
-本編で作った PR を、n 層の **スタック PR**（`gh stack`）に分けて出し直します。手順は [docs/01-exercise-guide.md](docs/01-exercise-guide.md#発展課題15-分) を参照してください。
+本編で作った PR を、n 層の **スタック PR**（`gh stack`）に分けて出し直します。手順は [docs/01-exercise-guide.md](docs/01-exercise-guide.md#発展課題) を参照してください。
 
 ```text
 (main) ← 1 層目 ← 2 層目 ← … ← n 層目
